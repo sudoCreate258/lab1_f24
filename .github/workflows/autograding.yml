@@ -21,11 +21,12 @@ jobs:
         pip install pytest
 
     - name: Run tests
-      run: pytest --maxfail=1 --disable-warnings --tb=short --junitxml=results.xml || true
+      run: |
+        pytest --maxfail=1 --disable-warnings --tb=short > results.txt || true
 
     - name: Upload test results
       if: always()
       uses: actions/upload-artifact@v3
       with:
         name: test-results
-        path: results.xml
+        path: results.txt

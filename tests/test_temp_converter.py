@@ -4,11 +4,11 @@ from temp_converter import c2f, main  # Import your module
 class TestTempConversion(unittest.TestCase):
     def test_c2f(self):
         test_cases = [
-            # (Celsius Input, Expected Fahrenheit Output, Incorrect Fahrenheit Output)
-            (20, 68, 104),        # Room Temperature
-            (0, 32, 0),           # Freezing Point of Water
-            (100, 212, 180),      # Boiling Point of Water
-            (37.78, 100, 68)      # Very Hot Day
+            # (Celsius Input, Expected Fahrenheit Output)
+            (20, 68),        # Room Temperature
+            (0, 32),         # Freezing Point of Water
+            (100, 212),      # Boiling Point of Water
+            (37.78, 100)     # Very Hot Day
         ]
         
         for cel, expected_fah in test_cases:

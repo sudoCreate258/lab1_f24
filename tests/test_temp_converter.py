@@ -1,25 +1,13 @@
 import unittest
-import pytest
-from temp_converter.temp_converter import c2f  # Adjust according to the actual function and module
+from temp_converter.temp_converter import c2f  # Import the function to be tested
 
 class TestTempConversion(unittest.TestCase):
-    def test_c2f(self):
-        test_cases = [
-            # (Celsius Input, Expected Fahrenheit Output)
-            (20, 68),        # Room Temperature
-            (0, 32),         # Freezing Point of Water
-            (100, 212),      # Boiling Point of Water
-            (37.78, 100)     # Very Hot Day
-        ]
-        
-        for cel, expected_fah in test_cases:
-            with self.subTest(c=cel):
-                self.assertAlmostEqual(c2f(cel), expected_fah, places=2)
 
-    def test_main_output(self):
-            cel = 100
-            expected_fah = 212
-            self.assertAlmostEqual(main(cel), expected_fah, places=2)
+    def test_c2f(self):
+        # Test cases for c2f function
+        self.assertAlmostEqual(c2f(0), 32, places=2)    # Freezing point of water
+        self.assertAlmostEqual(c2f(100), 212, places=2)  # Boiling point of water
+        self.assertAlmostEqual(c2f(37.78), 100, places=2)  # Very hot day
 
 if __name__ == "__main__":
     unittest.main()

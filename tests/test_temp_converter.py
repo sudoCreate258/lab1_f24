@@ -1,5 +1,5 @@
 import pytest
-from temp_converter import c2f  # Make sure this import is correct based on your structure
+from temp_converter import c2f  # Ensure correct import
 
 def test_c2f_freezing_point():
     assert round(c2f(0), 2) == 32.0  # Freezing point of water

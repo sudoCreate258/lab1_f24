@@ -1,6 +1,6 @@
 import unittest
 import pytest
-from src.temp_converter.temp_converter import c2f
+from temp_converter.temp_converter import c2f  # Adjust according to the actual function and module
 
 class TestTempConversion(unittest.TestCase):
     def test_c2f(self):

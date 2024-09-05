@@ -17,9 +17,9 @@ class TestTempConversion(unittest.TestCase):
                 self.assertAlmostEqual(c2f(cel), expected_fah, places=2)
 
     def test_main_output(self):
-        cel = 100
-        expected_fah = 212
-        self.assertAlmostEqual(main(cel), expected_fah, places=2)
+            cel = 100
+            expected_fah = 212
+            self.assertAlmostEqual(main(cel), expected_fah, places=2)
 
 if __name__ == "__main__":
     unittest.main()

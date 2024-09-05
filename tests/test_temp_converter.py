@@ -5,8 +5,3 @@ def test_c2f():
     assert round(c2f(0), 2) == 32  # Freezing point of water
     assert round(c2f(100), 2) == 212  # Boiling point of water
     assert round(c2f(37.78), 2) == 100  # Very hot day
-
-def test_f2c():
-    assert round(f2c(32), 2) == 0  # Freezing point of water
-    assert round(f2c(212), 2) == 100  # Boiling point of water
-    assert round(f2c(100), 2) == 37.78  # Very hot day

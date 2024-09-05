@@ -1,6 +1,6 @@
 import unittest
 import pytest
-from temp_converter.temp_converter import c2f  # Adjust to your actual module structure
+from src.temp_converter.temp_converter import c2f
 
 class TestTempConversion(unittest.TestCase):
     def test_c2f(self):

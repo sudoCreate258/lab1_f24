@@ -27,7 +27,7 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest --maxfail=1 --disable-warnings -q > result.log
+        pytest --maxfail=1 --disable-warnings --tb=short > result.log
         cat result.log
 
     - name: Upload test results

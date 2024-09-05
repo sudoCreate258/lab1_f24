@@ -1,34 +1,31 @@
-name: CI
+name: Python CI
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: [push, pull_request]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v2
       with:
-        python-version: '3.9'
+        python-version: 3.9
 
     - name: Install dependencies
       run: |
+        python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run tests and save results
+    - name: Run tests
       run: |
-        pytest --maxfail=1 --disable-warnings --tb=short > results.txt || true
+        pytest --maxfail=1 --disable-warnings --tb=short > result.txt
+        cat result.txt
 
-    - name: Upload test results
-      uses: actions/upload-artifact@v3
+    - name: Upload results.txt
+      uses: actions/upload-artifact@v2
       with:
         name: test-results
-        path: results.txt
+        path: result.txt

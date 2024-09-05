@@ -1,5 +1,5 @@
 import unittest
-from temp_converter import c2f, main  # Import your module
+from main import c2f, main  # Import your module
 
 class TestTempConversion(unittest.TestCase):
     def test_c2f(self):

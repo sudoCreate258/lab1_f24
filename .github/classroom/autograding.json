@@ -1,0 +1,10 @@
+{
+  "tests": [
+    {
+      "name": "Test Celsius to Fahrenheit Conversion",
+      "run": "python3 -m unittest temp_converter.py",
+      "input": "",
+      "output": ""
+    }
+  ]
+}

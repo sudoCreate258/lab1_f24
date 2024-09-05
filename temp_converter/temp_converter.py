@@ -1,17 +1,12 @@
 #!/usr/bin/python3
 
+# process
 def c2f(c):
-  fah = c * 9 / 5 + 32
-  return fah
+    return c * 9 / 5 + 32
 
-def main():
-  # input
-  cel = 0
-  # process
-  fah = c2f(cel)  
-  # output
-  print(f'Temp (C,F): \n{cel} C \n{fah:.2f} F')
-  return fah
+def main(cel):
+    return c2f(cel)
 
 if __name__ == "__main__":
-  main()
+    cel = 100         # input
+    print(main(cel))  # output

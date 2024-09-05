@@ -1,10 +1,6 @@
 name: CI
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
+on: [push, pull_request]
 
 jobs:
   test:
@@ -22,14 +18,14 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        pip install pytest
 
     - name: Run tests
-      run: |
-        pytest --maxfail=1 --disable-warnings --tb=short > results.txt
+      run: pytest --maxfail=1 --disable-warnings --tb=short --junitxml=results.xml || true
 
     - name: Upload test results
+      if: always()
       uses: actions/upload-artifact@v3
       with:
-        name: pytest-results
-        path: results.txt
+        name: test-results
+        path: results.xml

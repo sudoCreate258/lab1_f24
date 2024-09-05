@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 def c2f(c):
-  fah = (c * 9 / 5) + 32
+  fah = c * 9 / 5 + 32
   return fah
 
 def main():

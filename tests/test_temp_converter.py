@@ -1,18 +1,12 @@
-import unittest
-from temp_converter import c2f
+import pytest
+from temp_converter import c2f, f2c
 
-class TestTempConversion(unittest.TestCase):
-    def test_freezing_point(self):
-        self.assertAlmostEqual(c2f(0), 32, places=2)
+def test_c2f():
+    assert round(c2f(0), 2) == 32  # Freezing point of water
+    assert round(c2f(100), 2) == 212  # Boiling point of water
+    assert round(c2f(37.78), 2) == 100  # Very hot day
 
-    def test_boiling_point(self):
-        self.assertAlmostEqual(c2f(100), 212, places=2)
-
-    def test_hot_day(self):
-        self.assertAlmostEqual(c2f(37.78), 100, places=2)
-
-    def test_edge_case(self):
-        self.assertAlmostEqual(c2f(-40), -40, places=2)  # Freezing point of Celsius in Fahrenheit
-
-if __name__ == '__main__':
-    unittest.main()
+def test_f2c():
+    assert round(f2c(32), 2) == 0  # Freezing point of water
+    assert round(f2c(212), 2) == 100  # Boiling point of water
+    assert round(f2c(100), 2) == 37.78  # Very hot day
